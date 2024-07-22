@@ -438,6 +438,7 @@ function getStaff(staffId) {
   chucvuTag.value = item.chucvu;
   gioLamTag.value = item.giolam;
   editID = item.id;
+  tknvTag.setAttribute("readonly",true);
 }
 
 function editStaff() {
