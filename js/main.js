@@ -133,7 +133,7 @@ function addStaff() {
     loainhanvien: xepLoaiNhanVien,
   };
 
-  if (validateStaffProps(staffProps) && validateTaiKhoan(staffProps.taikhoan)) {
+  if (validateStaffProps(staffProps) & validateTaiKhoan(staffProps.taikhoan)) {
     var staff = new Staffs(staffProps);
     staffList.addStaffMethod(staff);
     setLocalStorage(staffList.list);
