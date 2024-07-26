@@ -1,5 +1,17 @@
 class Staffs {
-    constructor({id, taikhoan, hoten, email, matkhau, ngaylam, luongcoban, chucvu, giolam, tongluong, loainhanvien}) {
+    id;
+    taikhoan;
+    hoten;
+    email
+    matkhau;
+    ngaylam;
+    luongcoban;
+    chucvu;
+    giolam;
+    tongluong;
+    loainhanvien;
+
+    constructor(id, taikhoan, hoten, email, matkhau, ngaylam, luongcoban, chucvu, giolam) {
         this.id = id;
         this.taikhoan = taikhoan;
         this.hoten = hoten;
@@ -9,24 +21,32 @@ class Staffs {
         this.luongcoban = luongcoban;
         this.chucvu = chucvu;
         this.giolam = giolam;
-        this.tongluong = tongluong;
-        this.loainhanvien = loainhanvien;
+        this.tongluong = this.tinhTongLuong();
+        this.loainhanvien = this.xepLoai();
     }
+
+    tinhTongLuong() {
+        if (this.chucvu === "Sếp") {
+          return this.luongcoban * 3;
+        } else if (this.chucvu === "Trưởng phòng") {
+          return this.luongcoban * 2;
+        } else {
+          return this.luongcoban;
+        }
+    };
+      
+    xepLoai() {
+        if (this.chucvu === "Nhân viên") {
+            if (this.giolam < 160) {
+                return "Trung bình";
+            } else if (160 <= this.giolam && this.giolam < 176) {
+                return "Khá";
+            } else if (176 <= this.giolam && this.giolam < 192) {
+                return "Giỏi";
+            } else {
+                return "Xuất sắc";
+            }
+        }
+        return "";
+    };
 }
-
-// const staffParams = {
-//     taikhoan: 'nv001',
-//     hoten: 'Nguyen Van A',
-//     email: 'nguyenvana@example.com',
-//     matkhau: '123456',
-//     ngaylam: '2024-07-01',
-//     luongcoban: 5000000,
-//     chucvu: 'Nhan Vien',
-//     giolam: 160,
-//     tongluong: 8000000,
-//     loainhanvien: 'Chinh Thuc'
-// };
-
-// const staff = new Staffs(staffParams);
-
-// console.log(staff);

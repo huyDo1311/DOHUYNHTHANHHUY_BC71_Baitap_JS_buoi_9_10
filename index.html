@@ -197,7 +197,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fa fa-user"></i></span>
 								</div>
-								<input type="text" name="tk" id="tknv" class="form-control input-sm"
+								<input type="number" name="tk" id="tknv" class="form-control input-sm"
 									placeholder="Tài khoản">
 							</div>
 
@@ -258,7 +258,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fa fa-money" aria-hidden="true"></i></span>
 								</div>
-								<input type="text" name="luongCB" id="luongCB" class="form-control input-sm"
+								<input type="number" min="10000000" max="20000000" name="luongCB" id="luongCB" class="form-control input-sm"
 									placeholder="Lương cơ bản">
 							</div>
 							<span class="sp-thongbao" id="tbLuongCB"></span>
@@ -283,7 +283,7 @@
 								<div class="input-group-prepend">
 									<span class="input-group-text"><i class="fa fa-clock-o" aria-hidden="true"></i></span>
 								</div>
-								<input type="text" name="gioLam" id="gioLam" class="form-control input-sm"
+								<input type="number" min="80" max="200" name="gioLam" id="gioLam" class="form-control input-sm"
 									placeholder="Giờ làm">
 							</div>
 							<span class="sp-thongbao" id="tbGiolam"></span>
@@ -296,7 +296,7 @@
 				<div class="modal-footer" id="modal-footer">
 					<button onclick="addStaff()" id="btnThemNV" type="button" class="btn btn-success">Thêm người dùng</button>
 					<button onclick="editStaff()" id="btnCapNhat" type="button" class="btn btn-success">Cập nhật</button>
-					<button id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
+					<button onclick="resetForm()" id="btnDong" type="button" class="btn btn-danger" data-dismiss="modal">Đóng</button>
 				</div>
 
 			</div>
@@ -330,10 +330,13 @@
 			});
 		});
 	</script>
-	<script src="./js/modal.js"></script>
 	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/modal.js"></script>
+
 	<script src="./js/Staffs.js"></script>
 	<script src="./js/StaffList.js"></script>
+	<script src="./js/controller.js"></script>
+	<script src="./js/validate.js"></script>
 	<script src="./js/main.js"></script>
 </body>
 
