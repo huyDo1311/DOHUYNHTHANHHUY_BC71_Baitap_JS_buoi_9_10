@@ -114,9 +114,8 @@ function getStaff(staffId) {
     // Kiểm tra nếu body có class "modal-open"
     if (body.classList.contains("modal-open")) {
       // Kiểm tra nếu click nằm ngoài phần tử form
-      console.log('event :>> ', event);
       if (!form.contains(event.target)) {
-        // window.location.reload();
+        window.location.reload();
       }
     }
   };
